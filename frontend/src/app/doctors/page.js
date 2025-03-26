@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { Card, CardContent, CardMedia, Typography, Grid, Container, CircularProgress, Button } from "@mui/material";
 
-const API_URL = "http://127.0.0.1:8000/api/doctors/"; // Change this based on your Django API URL
+const API_URL = "https://skkhandokar18.pythonanywhere.com/api/doctors/"; 
 
 export default function DoctorsPage() {
   const [doctors, setDoctors] = useState([]);
@@ -39,7 +39,7 @@ export default function DoctorsPage() {
               <Card className="shadow-lg rounded-xl transform transition duration-500 hover:scale-105">
                 <CardMedia
                   component="img"
-                  height="200" // Set a fixed height for the image
+                  height="200" 
                   image={doctor.photo}
                   alt={doctor.name}
                   className="rounded-t-xl object-cover"
