@@ -1,34 +1,33 @@
-// src/app/test-groups/tests/[testName]/description/page.js
-"use client"; // Mark this as a Client Component
+
+"use client"; 
 
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Typography, Paper, Button, CircularProgress, Box, Divider } from "@mui/material";
 import Link from "next/link";
-import { useParams } from "next/navigation"; // Use useParams() to get dynamic route parameters
+import { useParams } from "next/navigation";
 
 export default function TestDescription() {
   const [test, setTest] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Get dynamic route parameters
+
   const { groupName, testName } = useParams();
 
   useEffect(() => {
-    if (!groupName || !testName) return; // Ensure params are available
-
+    if (!groupName || !testName) return; 
     // Fetch all tests for the group from Django backend
     axios
-      .get(`http://127.0.0.1:8000/api/test-groups/${groupName}/tests/`)
+      .get(`https://skkhandokar18.pythonanywhere.com/api/test-groups/${groupName}/tests/`)
       .then((response) => {
         // Find the specific test by matching testName
         const foundTest = response.data.find((test) => test.name === testName);
 
         if (foundTest) {
-          setTest(foundTest); // Set the matched test
+          setTest(foundTest); 
         } else {
-          setError("Test not found"); // Handle case where test is not found
+          setError("Test not found"); 
         }
         setLoading(false);
       })
