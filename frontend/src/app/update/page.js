@@ -7,7 +7,7 @@ const UpdatesPage = () => {
   const [updates, setUpdates] = useState([]);
 
   useEffect(() => {
-    axios.get('http://127.0.0.1:8000/api/updates/')
+    axios.get('https://skkhandokar18.pythonanywhere.com/api/updates/')
       .then((response) => {
         console.log('Fetched updates:', response.data);
         setUpdates(response.data);
