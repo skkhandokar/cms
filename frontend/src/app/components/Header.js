@@ -6,12 +6,13 @@ const Header = () => {
   return (
     <AppBar position="static" className="bg-gradient-to-r from-blue-600 to-blue-800 shadow-lg">
       <Toolbar className="flex justify-between">
-        {/* Logo */}
+
+    
         <Typography variant="h6" className="text-white font-bold">
           Diagnostic Center
         </Typography>
 
-        {/* Navigation Links */}
+
         <div>
           <Button color="inherit">
             <Link href="/" className="text-white hover:text-gray-300">Home</Link>
