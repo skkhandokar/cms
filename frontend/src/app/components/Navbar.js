@@ -31,13 +31,14 @@ const Navbar = () => {
   return (
     <AppBar position="sticky" className="bg-[#004aad] shadow-md">
       <Toolbar className="max-w-7xl mx-auto w-full flex justify-between items-center">
-        {/* Logo */}
+
+    
         <Link href="/" className="flex items-center space-x-2">
           <Image src="/logo.jpg" alt="CMS Logo" width={50} height={50} />
           <span className="text-white font-bold text-lg hidden md:block">Central Medicare Services</span>
         </Link>
 
-        {/* Desktop Nav Links */}
+      
         <div className="hidden md:flex space-x-6">
           <Link href="/" className="text-white hover:text-gray-200">Home</Link>
           <Link href="/update" className="text-white hover:text-gray-200">Updates</Link>
@@ -60,7 +61,7 @@ const Navbar = () => {
           </Menu>
         </div>
 
-        {/* Authentication Buttons */}
+        
         <div className="hidden md:flex space-x-4">
           <Button variant="outlined" className="border-white text-white hover:border-gray-200 hover:text-gray-200">
             <Link href="/login">Login</Link>
@@ -70,7 +71,7 @@ const Navbar = () => {
           </Button>
         </div>
 
-        {/* Mobile Menu Button */}
+        
         <IconButton edge="end" className="md:hidden text-white" onClick={handleDrawerToggle}>
           <MenuIcon />
         </IconButton>
