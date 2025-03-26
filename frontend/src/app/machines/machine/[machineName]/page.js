@@ -22,7 +22,7 @@ export default function MachineDetail() {
     useEffect(() => {
         if (decodedMachineName) {
             axios
-                .get(`http://127.0.0.1:8000/api/machines/machine/${decodeURIComponent(decodedMachineName)}/`)
+                .get(`https://skkhandokar18.pythonanywhere.com/api/machines/machine/${decodeURIComponent(decodedMachineName)}/`)
                 .then((response) => {
                     setMachine(response.data);
                     setError(null);
@@ -64,7 +64,8 @@ export default function MachineDetail() {
     return (
         <div className=" bg-gray-50 min-h-screen flex flex-col items-center justify-center space-y-8">
             <div className="w-full max-w-4xl  overflow-hidden">
-                {/* Image Div */}
+
+        
                 <div className=" h-64">
                     <img 
                         src={machine.image} 
@@ -73,7 +74,7 @@ export default function MachineDetail() {
                     />
                 </div>
 
-                {/* Name Div (centered) */}
+
                 <div className="flex justify-center items-center py-4">
                     <Typography variant="h4" className="font-semibold text-gray-900">{machine.name}</Typography>
                 </div>
