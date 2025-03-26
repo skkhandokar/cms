@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { Card, CardContent, Typography, Grid, Avatar, Chip, Divider, Button } from "@mui/material";
 import { Email, Phone, Work, School, LocationOn, AccessTime, MonetizationOn } from "@mui/icons-material";
 
-const API_URL = "http://127.0.0.1:8000/api/doctors/";
+const API_URL = "https://skkhandokar18.pythonanywhere.com/api/doctors/";
 
 export default function DoctorProfile() {
   const params = useParams();
@@ -15,17 +15,16 @@ export default function DoctorProfile() {
   const [profile, setProfile] = useState(null);
   const [doctor, setDoctor] = useState(null);
 
-  // First API call: Fetch doctor profile from a specific endpoint
   useEffect(() => {
     if (decodedName) {
-      fetch(`http://127.0.0.1:8000/api/doctors/doctor-profiles/${encodeURIComponent(decodedName)}/`)
+      fetch(`https://skkhandokar18.pythonanywhere.com/api/doctors/doctor-profiles/${encodeURIComponent(decodedName)}/`)
         .then(response => response.json())
         .then(data => setProfile(data))
         .catch(error => console.error("Error fetching doctor profile:", error));
     }
   }, [decodedName]);
 
-  // Second API call: Fetch all doctors and find the specific doctor
+  
   useEffect(() => {
     if (decodedName) {
       fetch(`${API_URL}`)
@@ -67,7 +66,7 @@ export default function DoctorProfile() {
           />
         </div>
 
-        {/* Rest of the Details */}
+
 
         <Typography
             variant="h5"
@@ -125,7 +124,6 @@ export default function DoctorProfile() {
             </Grid>
           </Grid>
 
-          {/* Bio Section with Increased Top Gap */}
           <div className="mt-12">
             <Typography variant="body1" className="text-gray-700 mb-6">
               <strong className="text-gray-800">Bio:</strong> {profile.bio}
@@ -140,7 +138,7 @@ export default function DoctorProfile() {
           </div>
         </CardContent>
 
-        {/* Book Appointment Button */}
+
         <div className="text-center p-8">
           <Button
             variant="contained"
