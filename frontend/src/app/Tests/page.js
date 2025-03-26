@@ -1,6 +1,6 @@
-// pages/index.js
+
 "use client";
-// pages/index.js
+
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import Link from 'next/link';
@@ -12,9 +12,9 @@ export default function Home() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    // Fetch all test groups from the API
+
     axios
-      .get('http://127.0.0.1:8000/api/test-groups/')
+      .get('https://skkhandokar18.pythonanywhere.com/api/test-groups/')
       .then((response) => {
         setTestGroups(response.data);
         setLoading(false);
