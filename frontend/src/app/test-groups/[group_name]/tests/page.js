@@ -14,7 +14,7 @@ export default function TestGroupDetail() {
   useEffect(() => {
     if (!group_name) return; 
     axios
-      .get(`http://127.0.0.1:8000/api/test-groups/${group_name}/tests/`)
+      .get(`https://skkhandokar18.pythonanywhere.com/api/test-groups/${group_name}/tests/`)
       .then((response) => {
         setTests(response.data);
         setLoading(false);
