@@ -11,7 +11,7 @@ const Navbar = () => {
   const [anchorEl, setAnchorEl] = useState(null);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/api/machines/categories/")
+    fetch("https://skkhandokar18.pythonanywhere.com/api/machines/categories/")
       .then((res) => res.json())
       .then((data) => setCategories(data));
   }, []);
