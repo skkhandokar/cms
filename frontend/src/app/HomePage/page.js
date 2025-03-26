@@ -18,14 +18,14 @@ export default function Home() {
 
   useEffect(() => {
 
-    axios.get("http://127.0.0.1:8000/api/about_service/aboutHome/").then((res) => setAbout(res.data));
-    axios.get("http://127.0.0.1:8000/api/about_service/serviceHome/").then((res) => setService(res.data));
+    axios.get("https://skkhandokar18.pythonanywhere.com/api/about_service/aboutHome/").then((res) => setAbout(res.data));
+    axios.get("https://skkhandokar18.pythonanywhere.com/api/about_service/serviceHome/").then((res) => setService(res.data));
   }, []);
 
 
   return (
     <div className="bg-gray-50">
-      {/* Hero Section */}
+  
       <div className="bg-gradient-to-r from-blue-500 to-blue-700 text-white py-20">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-5xl font-bold mb-6">Your Health, Our Priority</h1>
@@ -62,7 +62,7 @@ export default function Home() {
           </p>
       </div>
 
-      {/* About Us Section */}
+
       <section className="py-16 px-6 bg-white text-center">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold text-[#004aad] mb-6">{about.title}About</h2>
@@ -86,7 +86,7 @@ At Central Medicare Services, we are not just about diagnosing health conditions
       </section>
      
 
-      {/* Why Choose Us */}
+
       <section className="py-16 px-6 bg-[#004aad] text-white text-center">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold mb-6">Why Choose Us?</h2>
@@ -109,7 +109,7 @@ At Central Medicare Services, we are not just about diagnosing health conditions
         </div>
       </section>
 
-      {/* Latest Technology & Equipment */}
+
       <section className="py-16 px-6 bg-white text-center">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold text-[#004aad] mb-6">
@@ -133,7 +133,7 @@ At Central Medicare Services, we are not just about diagnosing health conditions
         </div>
       </section>
 
-      {/* 24/7 Emergency Services */}
+
       <section className="py-16 px-6 bg-[#ffcc00] text-black text-center">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold mb-6">24/7 Emergency Services</h2>
