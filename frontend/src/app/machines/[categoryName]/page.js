@@ -18,7 +18,7 @@ export default function MachinesByCategory() {
     useEffect(() => {
         if (decodedCategory) {
             axios
-                .get(`http://127.0.0.1:8000/api/machines/${encodeURIComponent(decodedCategory)}/`)
+                .get(`https://skkhandokar18.pythonanywhere.com/api/machines/${encodeURIComponent(decodedCategory)}/`)
                 .then((response) => {
                     setMachines(response.data);
                     setError(null);
